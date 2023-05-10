@@ -1,0 +1,154 @@
+{
+    "home": [
+        {
+            "id": 0,
+            "name": "Baked Chicken Wings",
+            "category": "Meats",
+            "image": "/assets/images/baked-chicken-wings.jpg",
+            "info": "Chicken Wings baked in their juices along with a special combination of spices",
+            "num": 4,
+            "price": 5000,
+            "featured": false
+        },
+        {
+            "id": 7,
+            "name": "Hot Spicy Chicken",
+            "category": "Meats",
+            "image": "/assets/images/spicy-chicken.jpg",
+            "info": "Chicken fried in a peppery sauce",
+            "num": 5,
+            "price": 5000,
+            "featured": true
+        },
+        {
+            "id": 1,
+            "name": "No-Icing Cupcakes",
+            "category": "Cakes",
+            "image": "/assets/images/no-icing-cupcakes.jpg",
+            "info": "Cupcakes baked to perfection without all that extra sugar",
+            "num": 6,
+            "price": 4000,
+            "featured": false
+        },
+        {
+            "id": 4,
+            "name": "Frosted Cupcakes",
+            "category": "Cakes",
+            "image": "/assets/images/cupcakes.jpg",
+            "info": "Cupcakes topped beautifully with a blend of whipped cream and frostings",
+            "num": 6,
+            "price": 5000,
+            "featured": false
+        },
+        {
+            "id": 3,
+            "name": "Crusted Fish Rolls",
+            "category": "Pastries",
+            "image": "/assets/images/fish-rolls.jpg",
+            "info": "Fish rolls dipped in eggs and breadcrumbs, fried to crusty perfection for that crunchy feel",
+            "num": 5,
+            "price": 2500,
+            "featured": false
+        },
+        {
+            "id": 2,
+            "name": "Spring Rolls",
+            "category": "Pastries",
+            "image": "/assets/images/spring-rolls.jpg",
+            "info": "Our vegeratian spring rolls are made with only the freshest vegetables, hand-picked from our very own garden",
+            "num": 8,
+            "price": 2000,
+            "featured": false
+        },
+        {
+            "id": 5,
+            "name": "Samosas",
+            "category": "Pastries",
+            "image": "/assets/images/samosas.jpg",
+            "info": "Crunchy samosas fried to perfection",
+            "num": 10,
+            "price": 4500,
+            "featured": false
+        },
+        {
+            "id": 6,
+            "name": "Glazed Donuts",
+            "category": "Pastries",
+            "image": "/assets/images/glazed-donuts.jpg",
+            "info": "No-sugar donuts with a chocolate glaze and sprinkles",
+            "num": 6,
+            "price": 4000,
+            "featured": false
+        },
+        {
+            "id": 8,
+            "name": "Club Sandwich",
+            "category": "Snacks",
+            "image": "/assets/images/club-sandwich.jpg",
+            "info": "Very Rich sandwich with baloney, lettuce and cheese",
+            "num": 5,
+            "price": 2000,
+            "featured": false
+        },
+        {
+            "id": 9,
+            "name": "Sugar-sprinkled Puffpuffs",
+            "category": "Snacks",
+            "image": "/assets/images/puffpuffs.jpg",
+            "info": "Soft and chewy puffs with just the right amount of sugar",
+            "num": 15,
+            "price": 2000,
+            "featured": true
+        },
+        {
+            "id": 10,
+            "name": "Meat Pies",
+            "category": "Pastries",
+            "image": "/assets/images/meat-pies.jpg",
+            "info": "Shiny pastries stuffed with chicken and beef",
+            "num": 5,
+            "price": 2500,
+            "featured": false
+        },
+        {
+            "id": 11,
+            "name": "Beef Kebab",
+            "category": "Meats",
+            "image": "/assets/images/beef-kebab.jpg",
+            "info": "Skewered beef roasted with spices and our secret sauce",
+            "num": 5,
+            "price": 5000,
+            "featured": false
+        },
+        {
+            "id": 12,
+            "name": "Sausage Roll",
+            "category": "Pastries",
+            "image": "/assets/images/sausage-rolls.jpg",
+            "info": "Pastries rolled over baked and roasted sausages",
+            "num": 5,
+            "price": 2500,
+            "featured": false
+        },
+        {
+            "id": 13,
+            "name": "Asun",
+            "category": "Meats",
+            "image": "/assets/images/asun.jpg",
+            "info": "Goat meat boiled, fried and baked in the hottest of peppers",
+            "num": 1,
+            "price": 4000,
+            "featured": false
+        },
+        {
+            "id": 14,
+            "name": "Muesli Dessert Parfait",
+            "category": "Snacks",
+            "image": "/assets/images/parfait.jpg",
+            "info": "Rich, healthy parfait with nuts and fruits",
+            "num": 1,
+            "price": 3500,
+            "featured": true
+        }
+    ]
+}
