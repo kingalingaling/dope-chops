@@ -8,6 +8,7 @@
             "info": "Chicken Wings baked in their juices along with a special combination of spices",
             "num": 4,
             "price": 5000,
+            "priceRange": "$$$",
             "featured": false
         },
         {
@@ -18,6 +19,7 @@
             "info": "Chicken fried in a peppery sauce",
             "num": 5,
             "price": 5000,
+            "priceRange": "$$$",
             "featured": true
         },
         {
@@ -28,6 +30,7 @@
             "info": "Cupcakes baked to perfection without all that extra sugar",
             "num": 6,
             "price": 4000,
+            "priceRange": "$$",
             "featured": false
         },
         {
@@ -38,6 +41,7 @@
             "info": "Cupcakes topped beautifully with a blend of whipped cream and frostings",
             "num": 6,
             "price": 5000,
+            "priceRange": "$$$",
             "featured": false
         },
         {
@@ -48,6 +52,7 @@
             "info": "Fish rolls dipped in eggs and breadcrumbs, fried to crusty perfection for that crunchy feel",
             "num": 5,
             "price": 2500,
+            "priceRange": "$",
             "featured": false
         },
         {
@@ -58,6 +63,7 @@
             "info": "Our vegeratian spring rolls are made with only the freshest vegetables, hand-picked from our very own garden",
             "num": 8,
             "price": 2000,
+            "priceRange": "$",
             "featured": false
         },
         {
@@ -68,6 +74,7 @@
             "info": "Crunchy samosas fried to perfection",
             "num": 10,
             "price": 4500,
+            "priceRange": "$$$",
             "featured": false
         },
         {
@@ -78,6 +85,7 @@
             "info": "No-sugar donuts with a chocolate glaze and sprinkles",
             "num": 6,
             "price": 4000,
+            "priceRange": "$$",
             "featured": false
         },
         {
@@ -88,6 +96,7 @@
             "info": "Very Rich sandwich with baloney, lettuce and cheese",
             "num": 5,
             "price": 2000,
+            "priceRange": "$",
             "featured": false
         },
         {
@@ -98,6 +107,7 @@
             "info": "Soft and chewy puffs with just the right amount of sugar",
             "num": 15,
             "price": 2000,
+            "priceRange": "$",
             "featured": true
         },
         {
@@ -108,6 +118,7 @@
             "info": "Shiny pastries stuffed with chicken and beef",
             "num": 5,
             "price": 2500,
+            "priceRange": "$",
             "featured": false
         },
         {
@@ -118,6 +129,7 @@
             "info": "Skewered beef roasted with spices and our secret sauce",
             "num": 5,
             "price": 5000,
+            "priceRange": "$$$",
             "featured": false
         },
         {
@@ -128,6 +140,7 @@
             "info": "Pastries rolled over baked and roasted sausages",
             "num": 5,
             "price": 2500,
+            "priceRange": "$",
             "featured": false
         },
         {
@@ -138,6 +151,7 @@
             "info": "Goat meat boiled, fried and baked in the hottest of peppers",
             "num": 1,
             "price": 4000,
+            "priceRange": "$$",
             "featured": false
         },
         {
@@ -148,6 +162,7 @@
             "info": "Rich, healthy parfait with nuts and fruits",
             "num": 1,
             "price": 3500,
+            "priceRange": "$$",
             "featured": true
         }
     ]

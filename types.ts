@@ -6,5 +6,6 @@ export interface foodDetails {
     info: string,
     num: number,
     price: number,
+    priceRange: string
     featured: boolean
 }

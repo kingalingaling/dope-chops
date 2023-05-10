@@ -52,7 +52,7 @@ const Navbar = () => {
       {nav ? <div className="bg-black/70 fixed w-full h-screen z-10 top-0 left-0" onClick={() => setNav(!nav)}></div> : ""}
 
       {/* Side drawer Menu */}
-      <div className={nav ? "fixed top-0 left-0 w-[300px] h-screen bg-black/60 backdrop-blur-md text-white z-10 duration-200" : 'hidden'}>
+      <div className={nav ? "fixed top-0 left-0 w-[300px] h-screen bg-black/60 backdrop-blur-md text-white z-10 duration-300" : 'hidden'}>
         <AiOutlineClose
           size={30}
           className="absolute left-4 top-4 cursor-pointer"
