@@ -33,7 +33,7 @@ const Foods = () => {
     );
   };
 
-  // Set View Moe Info for food items
+  // Set View More Info for food items
   const onSetOnView = (newOnView: any) => {
     setOnView(newOnView);
   };
