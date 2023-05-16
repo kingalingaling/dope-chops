@@ -23,7 +23,7 @@ const Navbar = () => {
           <AiOutlineMenu size={30} />
         </div>
         <h1 className="text-2xl text-white lg:4xl px-2">
-          Dope <span className="font-bold">Smallchops</span>
+          Dope <span className="font-bold">Chops</span>
         </h1>
         <div className="hidden lg:flex items-center bg-gray-200 rounded-full p-1 text-md">
           <p className="bg-orange-600 text-white rounded-full p-2">Pickup</p>
@@ -49,7 +49,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {/* Overlay */}
-      {nav ? <div className="bg-black/70 fixed w-full h-screen z-10 top-0 left-0" onClick={() => setNav(!nav)}></div> : ""}
+      {nav ? <div className="bg-black/70 fixed w-full h-screen z-10 top-0 left-0 duration-300" onClick={() => setNav(!nav)}></div> : ""}
 
       {/* Side drawer Menu */}
       <div className={nav ? "fixed top-0 left-0 w-[300px] h-screen bg-black/60 backdrop-blur-md text-white z-10 duration-300" : 'hidden'}>
@@ -64,7 +64,7 @@ const Navbar = () => {
         <nav>
           <ul className="flex flex-col p-4 text-gray-400">
             {navItems.map(i => (
-                <li className="flex py-4 text-xl">
+                <li className="flex py-4 text-xl" key={i.item}>
                 {i.icon}
                 {i.item}
               </li>

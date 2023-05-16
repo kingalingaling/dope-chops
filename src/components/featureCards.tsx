@@ -22,7 +22,7 @@ const FeatureCards = () => {
         <div className="max-w-[1640px] mx-auto p-4 py-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Card */}
             {featured.map(i =>
-                <div className="rounded-xl relative">
+                <div className="rounded-xl relative" key={i.id}>
                 <div className="absolute bg-black/60 text-white w-full h-full rounded-xl">
                     <p className="text-3xl md:text-4xl font-bold px-4 pt-1.5 md:pt-2.5">{i.name}</p>
                     <p className="px-4 mt-1.5 md:mt-3">Until <span className='text-orange-300'>Next Week</span></p>
