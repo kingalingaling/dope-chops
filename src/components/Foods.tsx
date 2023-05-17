@@ -41,11 +41,11 @@ const Foods = () => {
   return (
     <div className="max-w-[1640px] px-4 py-8">
       <h1 className="text-orange-600 font-bold text-4xl text-center">
-        Top Rated Menu Items
+        Menu Items
       </h1>
 
       {/* Filter Row */}
-      <div className="flex flex-col justify-between lg:flex-row">
+      <div className="flex flex-col justify-between lg:flex-row pt-2">
         {/* Filter Categories */}
         <div className="text-white">
           <p className="font-bold">Filter Categories</p>

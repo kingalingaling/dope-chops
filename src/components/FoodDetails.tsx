@@ -3,7 +3,6 @@ const FoodDetails = (props: any) => {
     props.onSetOnView(false);
   };
   const foodItem = props.foodData;
-  console.log(foodItem);
   return (
     props.show && (
       <div className="flex flex-col justify-center items-center">
@@ -11,11 +10,11 @@ const FoodDetails = (props: any) => {
           className="bg-black/70 fixed flex w-full h-screen z-10 top-0 left-0"
           onClick={() => handleChangeState()}
         ></div>
-        <div className="fixed top-1/4 mx-auto my-auto z-20 border-black bg-gray-800 text-white shadow-xl duration-300 rounded-lg p-4 w-[600px]">
+        <div className="fixed top-32 md:top-1/4 mx-auto my-auto z-20 border-black bg-gray-800 text-white shadow-xl duration-300 rounded-lg p-4 w-4/5 sm:w-[600px]">
           <img
             src={foodItem.image}
             alt={foodItem.name}
-            className="w-full h-[350px] md:h-[250px] object-cover rounded-lg"
+            className="w-full h-[250px] object-cover rounded-lg"
           />
           <div className="flex flex-col justify-between px-2 py-3">
             <p className="font-bold text-xl text-orange-600">{foodItem.name}</p>
