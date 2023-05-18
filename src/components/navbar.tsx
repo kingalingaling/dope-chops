@@ -59,7 +59,7 @@ const Navbar = () => {
           onClick={() => {setNav(!nav)}}
         />
         <h2 className="text-2xl p-3 ml-12 mt-0.5">
-          Dope <span className="font-bold">Smallchops</span>
+          Dope <span className="font-bold">Chops</span>
         </h2>
         <nav>
           <ul className="flex flex-col p-4 text-gray-400">
