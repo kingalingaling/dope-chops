@@ -23,8 +23,8 @@ const FeatureCards = () => {
 
   return (
     <>
-    <div className="max-w-[1640px] mx-auto p-4 py-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <h2 className="text-orange-600 font-bold text-3xl text-center">Featured This Week</h2>
+    <h2 className="text-orange-600 font-bold text-3xl pt-5 text-center">Featured This Week</h2>
+    <div className="max-w-[1640px] mx-auto p-4 py-9 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {/* Card */}
       {featured.map((i) => (
         <div

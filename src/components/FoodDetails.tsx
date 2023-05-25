@@ -1,8 +1,20 @@
+import { useState } from "react";
+import { foodCart } from "../context/FoodContext";
+
 const FoodDetails = (props: any) => {
   const handleChangeState = () => {
     props.onSetOnView(false);
   };
   const foodItem = props.foodData;
+
+  // const [numFood, setNumFood] = useState(0);
+
+  const {
+    getItemQuantity,
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    removeFromCart,
+  } = foodCart();
   return (
     props.show && (
       <div className="flex flex-col justify-center items-center">
@@ -22,21 +34,41 @@ const FoodDetails = (props: any) => {
               <span className="font-bold text-orange-600">Category: </span>{" "}
               {foodItem.category}
             </p>
-            <p>
-              {foodItem.info}
-            </p>
+            <p>{foodItem.info}</p>
             <p>
               <span className="font-bold text-orange-600">Price: </span> N
               {foodItem.price}
             </p>
-            <div className="pt-10">
+            <div className="pt-10 flex justify-around">
               <button
                 className="bg-white border-white text-black hover:text-white hover:bg-gray-600 hover:border-gray-600 mx-4 absolute bottom-4 left-4"
                 onClick={() => handleChangeState()}
               >
                 Cancel
               </button>
-              <button className="bg-white border-white text-black hover:text-white hover:bg-orange-600 hover:border-orange-600 mx-4 absolute bottom-4 right-4">
+              {/* {numFood > 0 ? (
+                <div className="flex items-center">
+                  <button
+                    className="border-none bg-white text-black hover:text-white hover:bg-gray-600 rounded-full"
+                    onClick={() => {setNumFood(numFood - 1); decreaseCartQuantity(foodItem.id)}}
+                  >
+                    -
+                  </button>
+                  <div className="border border-white rounded-full w-9 h-9 text-center mx-4 flex items-center justify-center">
+                    {numFood}
+                  </div>
+                  <button
+                    className="rounded-full bg-white text-black hover:bg-orange-600 hover:text-white border-none"
+                    onClick={() => {setNumFood(numFood + 1); increaseCartQuantity(foodItem.id)}}
+                  >
+                    +
+                  </button>
+                </div>
+              ) : (
+                ""
+              )} */}
+              <button className="bg-white border-white text-black hover:text-white hover:bg-orange-600 hover:border-orange-600 mx-4 absolute bottom-4 right-4"
+              onClick={() => {increaseCartQuantity(foodItem.id); handleChangeState()}}>
                 Add to Cart
               </button>
             </div>
