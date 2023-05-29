@@ -64,6 +64,10 @@ export const FoodCartProvider = ({
     });
   };
 
+  const emptyCart = () => {
+    setCartItems([]);
+  };
+
   return (
     <foodCartContext.Provider
       value={{
@@ -71,6 +75,7 @@ export const FoodCartProvider = ({
         increaseCartQuantity,
         decreaseCartQuantity,
         removeFromCart,
+        emptyCart,
         cartItems,
         cartQuantity
       }}

@@ -5,7 +5,7 @@ import Foods from "../components/Foods";
 
 function App() {
   return (
-    <section className="bg-black/80">
+    <section className="bg-gray-800">
       <Navbar />
       <Hero />
       <FeatureCards />

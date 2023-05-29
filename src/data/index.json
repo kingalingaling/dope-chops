@@ -1,169 +1,238 @@
 {
-    "home": [
-        {
-            "id": 0,
-            "name": "Baked Chicken Wings",
-            "category": "Meats",
-            "image": "/assets/images/baked-chicken-wings.jpg",
-            "info": "Chicken Wings baked in their juices along with a special combination of spices",
-            "num": 4,
-            "price": 5000,
-            "priceRange": "$$$",
-            "featured": false
-        },
-        {
-            "id": 7,
-            "name": "Hot Spicy Chicken",
-            "category": "Meats",
-            "image": "/assets/images/spicy-chicken.jpg",
-            "info": "Chicken fried in a peppery sauce",
-            "num": 5,
-            "price": 5000,
-            "priceRange": "$$$",
-            "featured": true
-        },
-        {
-            "id": 1,
-            "name": "No-Icing Cupcakes",
-            "category": "Cakes",
-            "image": "/assets/images/no-icing-cupcakes.jpg",
-            "info": "Cupcakes baked to perfection without all that extra sugar",
-            "num": 6,
-            "price": 4000,
-            "priceRange": "$$",
-            "featured": false
-        },
-        {
-            "id": 4,
-            "name": "Frosted Cupcakes",
-            "category": "Cakes",
-            "image": "/assets/images/cupcakes.jpg",
-            "info": "Cupcakes topped beautifully with a blend of whipped cream and frostings",
-            "num": 6,
-            "price": 5000,
-            "priceRange": "$$$",
-            "featured": false
-        },
-        {
-            "id": 3,
-            "name": "Crusted Fish Rolls",
-            "category": "Pastries",
-            "image": "/assets/images/fish-rolls.jpg",
-            "info": "Fish rolls dipped in eggs and breadcrumbs, fried to crusty perfection for that crunchy feel",
-            "num": 5,
-            "price": 2500,
-            "priceRange": "$",
-            "featured": false
-        },
-        {
-            "id": 2,
-            "name": "Spring Rolls",
-            "category": "Pastries",
-            "image": "/assets/images/spring-rolls.jpg",
-            "info": "Our vegeratian spring rolls are made with only the freshest vegetables, hand-picked from our very own garden",
-            "num": 8,
-            "price": 2000,
-            "priceRange": "$",
-            "featured": false
-        },
-        {
-            "id": 5,
-            "name": "Samosas",
-            "category": "Pastries",
-            "image": "/assets/images/samosas.jpg",
-            "info": "Crunchy samosas fried to perfection",
-            "num": 10,
-            "price": 4500,
-            "priceRange": "$$$",
-            "featured": false
-        },
-        {
-            "id": 6,
-            "name": "Glazed Donuts",
-            "category": "Pastries",
-            "image": "/assets/images/glazed-donuts.jpg",
-            "info": "No-sugar donuts with a chocolate glaze and sprinkles",
-            "num": 6,
-            "price": 4000,
-            "priceRange": "$$",
-            "featured": false
-        },
-        {
-            "id": 8,
-            "name": "Club Sandwich",
-            "category": "Snacks",
-            "image": "/assets/images/club-sandwich.jpg",
-            "info": "Very Rich sandwich with baloney, lettuce and cheese",
-            "num": 5,
-            "price": 2000,
-            "priceRange": "$",
-            "featured": false
-        },
-        {
-            "id": 9,
-            "name": "Sugar-sprinkled Puffpuffs",
-            "category": "Snacks",
-            "image": "/assets/images/puffpuffs.jpg",
-            "info": "Soft and chewy puffs with just the right amount of sugar",
-            "num": 15,
-            "price": 2000,
-            "priceRange": "$",
-            "featured": true
-        },
-        {
-            "id": 10,
-            "name": "Meat Pies",
-            "category": "Pastries",
-            "image": "/assets/images/meat-pies.jpg",
-            "info": "Shiny pastries stuffed with chicken and beef",
-            "num": 5,
-            "price": 2500,
-            "priceRange": "$",
-            "featured": false
-        },
-        {
-            "id": 11,
-            "name": "Beef Kebab",
-            "category": "Meats",
-            "image": "/assets/images/beef-kebab.jpg",
-            "info": "Skewered beef roasted with spices and our secret sauce",
-            "num": 5,
-            "price": 5000,
-            "priceRange": "$$$",
-            "featured": false
-        },
-        {
-            "id": 12,
-            "name": "Sausage Roll",
-            "category": "Pastries",
-            "image": "/assets/images/sausage-rolls.jpg",
-            "info": "Pastries rolled over baked and roasted sausages",
-            "num": 5,
-            "price": 2500,
-            "priceRange": "$",
-            "featured": false
-        },
-        {
-            "id": 13,
-            "name": "Asun",
-            "category": "Meats",
-            "image": "/assets/images/asun.jpg",
-            "info": "Goat meat boiled, fried and baked in the hottest of peppers",
-            "num": 1,
-            "price": 4000,
-            "priceRange": "$$",
-            "featured": false
-        },
-        {
-            "id": 14,
-            "name": "Muesli Dessert Parfait",
-            "category": "Snacks",
-            "image": "/assets/images/parfait.jpg",
-            "info": "Rich, healthy parfait with nuts and fruits",
-            "num": 1,
-            "price": 3500,
-            "priceRange": "$$",
-            "featured": true
-        }
-    ]
+  "home": [
+    {
+      "id": 0,
+      "name": "Baked Chicken Wings",
+      "category": "Meats",
+      "image": "/assets/images/baked-chicken-wings.jpg",
+      "info": "Chicken Wings baked in their juices along with a special combination of spices",
+      "num": 4,
+      "price": 5000,
+      "priceRange": "$$$",
+      "featured": false
+    },
+    {
+      "id": 7,
+      "name": "Hot Spicy Chicken",
+      "category": "Meats",
+      "image": "/assets/images/spicy-chicken.jpg",
+      "info": "Chicken fried in a peppery sauce",
+      "num": 5,
+      "price": 5000,
+      "priceRange": "$$$",
+      "featured": true
+    },
+    {
+      "id": 1,
+      "name": "No-Icing Cupcakes",
+      "category": "Cakes",
+      "image": "/assets/images/no-icing-cupcakes.jpg",
+      "info": "Cupcakes baked to perfection without all that extra sugar",
+      "num": 6,
+      "price": 4000,
+      "priceRange": "$$",
+      "featured": false
+    },
+    {
+      "id": 4,
+      "name": "Frosted Cupcakes",
+      "category": "Cakes",
+      "image": "/assets/images/cupcakes.jpg",
+      "info": "Cupcakes topped beautifully with a blend of whipped cream and frostings",
+      "num": 6,
+      "price": 5000,
+      "priceRange": "$$$",
+      "featured": false
+    },
+    {
+      "id": 3,
+      "name": "Crusted Fish Rolls",
+      "category": "Pastries",
+      "image": "/assets/images/fish-rolls.jpg",
+      "info": "Fish rolls dipped in eggs and breadcrumbs, fried to crusty perfection for that crunchy feel",
+      "num": 5,
+      "price": 2500,
+      "priceRange": "$",
+      "featured": false
+    },
+    {
+      "id": 2,
+      "name": "Spring Rolls",
+      "category": "Pastries",
+      "image": "/assets/images/spring-rolls.jpg",
+      "info": "Our vegeratian spring rolls are made with only the freshest vegetables, hand-picked from our very own garden",
+      "num": 8,
+      "price": 2000,
+      "priceRange": "$",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "name": "Samosas",
+      "category": "Pastries",
+      "image": "/assets/images/samosas.jpg",
+      "info": "Crunchy samosas fried to perfection",
+      "num": 10,
+      "price": 4500,
+      "priceRange": "$$$",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "name": "Glazed Donuts",
+      "category": "Pastries",
+      "image": "/assets/images/glazed-donuts.jpg",
+      "info": "No-sugar donuts with a chocolate glaze and sprinkles",
+      "num": 6,
+      "price": 4000,
+      "priceRange": "$$",
+      "featured": false
+    },
+    {
+      "id": 8,
+      "name": "Club Sandwich",
+      "category": "Snacks",
+      "image": "/assets/images/club-sandwich.jpg",
+      "info": "Very Rich sandwich with baloney, lettuce and cheese",
+      "num": 5,
+      "price": 2000,
+      "priceRange": "$",
+      "featured": false
+    },
+    {
+      "id": 9,
+      "name": "Sugar-sprinkled Puffpuffs",
+      "category": "Snacks",
+      "image": "/assets/images/puffpuffs.jpg",
+      "info": "Soft and chewy puffs with just the right amount of sugar",
+      "num": 15,
+      "price": 2000,
+      "priceRange": "$",
+      "featured": true
+    },
+    {
+      "id": 10,
+      "name": "Meat Pies",
+      "category": "Pastries",
+      "image": "/assets/images/meat-pies.jpg",
+      "info": "Shiny pastries stuffed with chicken and beef",
+      "num": 5,
+      "price": 2500,
+      "priceRange": "$",
+      "featured": false
+    },
+    {
+      "id": 11,
+      "name": "Beef Kebab",
+      "category": "Meats",
+      "image": "/assets/images/beef-kebab.jpg",
+      "info": "Skewered beef roasted with spices and our secret sauce",
+      "num": 5,
+      "price": 5000,
+      "priceRange": "$$$",
+      "featured": false
+    },
+    {
+      "id": 12,
+      "name": "Sausage Roll",
+      "category": "Pastries",
+      "image": "/assets/images/sausage-rolls.jpg",
+      "info": "Pastries rolled over baked and roasted sausages",
+      "num": 5,
+      "price": 2500,
+      "priceRange": "$",
+      "featured": false
+    },
+    {
+      "id": 13,
+      "name": "Asun",
+      "category": "Meats",
+      "image": "/assets/images/asun.jpg",
+      "info": "Goat meat boiled, fried and baked in the hottest of peppers",
+      "num": 1,
+      "price": 4000,
+      "priceRange": "$$",
+      "featured": false
+    },
+    {
+      "id": 14,
+      "name": "Muesli Dessert Parfait",
+      "category": "Snacks",
+      "image": "/assets/images/parfait.jpg",
+      "info": "Rich, healthy parfait with nuts and fruits",
+      "num": 1,
+      "price": 3500,
+      "priceRange": "$$",
+      "featured": true
+    }
+  ],
+  "help": [
+    {
+      "id": 0,
+      "instruction": "Browse through the Menu and pick what you like"
+    },
+    {
+      "id": 1,
+      "instruction": "Use filters to pick a specific subset from our range of foods. You can subset based on type or price"
+    },
+    {
+      "id": 2,
+      "instruction": "Click on food items to view more details. Add the items to cart and keep track of the items by the bubble on the cart item in the top right corner"
+    },
+    {
+      "id": 3,
+      "instruction": "Click on cart and review items added. Type in your phone number and click checkout to proceed to Pay"
+    },
+    {
+      "id": 4,
+      "instruction": "Voila! Sit back and relax while we bring fresh chops to your doorstep. You should receive a call in under 30 minutes"
+    }
+  ],
+  "chefs": [
+    {
+      "id": 0,
+      "name": "Komi David",
+      "image": "/assets/images/chefs/komi.png",
+      "role": "CEO/Chef de Cuisine",
+      "about": "A certified pastry chef and experiencd all-rounder, Komi began making simple pastries and cakes by the age of 9. Seeing that she had exceptional talents, her parents saved up money to send her to a culinary school after secondary school. During the pandemic, she had the brilliant idea to make and deliver fresh snacks, cakes and pastries to homes. Three years on and over 50 orders made personally, you can trust your order is in good hands"
+    },
+    {
+      "id": 1,
+      "name": "Sheva David",
+      "image": "/assets/images/chefs/sheva.png",
+      "role": "Sous Chef",
+      "about": "As the younger sister to Komi, Sheva learned a lot about cooking from her. Sheva has been involved with Dope Chops from the get-go, accruing experience and skills to better her cooking and of course, her presentation. She is versed in the making of cake and parfaits and has earned the nickname 'Cake Boss' in the kitchen" 
+    },
+    {
+      "id": 2,
+      "name": "Simon Chukwuemeka",
+      "image": "/assets/images/chefs/simon.png",
+      "role": "Kitchen Assistant",
+      "about": "Simon is a simple, joyful chef who helps with preparing ingredients for use, as well as cooking meat-based chops. His jovial attitude fills the kitchen with laughter and fun but his knife-handling skills are no joke. Simon is capable of peeling and dicing a carrot in 20 seconds flat. He holds the second-best entry for the most onions diced without shedding a aingle tear - 3 and a half"
+    },
+    {
+      "id": 3,
+      "name": "Kory Anders",
+      "image": "/assets/images/chefs/kory.png",
+      "role": "Kitchen Assistant/Order Manager",
+      "about": "A recent graduate of the university, Kory has spent the last year at Dope Chops, compiling orders and managing pricing amongst other things. She also aims to improve her cooking skills greatly and is working towards that as a chef and kitchen asistant. She holds the record for the most onions diced without shedding a single tear - 4"
+    }
+  ],
+  "faq": [
+    {
+      "id": 0,
+      "question": "Don't I need to login to order?",
+      "answer": "No you don't. We're working on account management for future use but for now, it's a direct to order platform. Order, put in an address, pay and receive your order"
+    },
+    {
+      "id": 1,
+      "question": "I came back to the site but can't find items in my cart",
+      "answer": "As mentioned above, there is no account management. Cart data is stored locally. This means you can't access the same cart items from different devices"
+    },
+    {
+      "id": 3,
+      "question": "Okay but I can't access my cart still. Same device",
+      "answer": "Cart details are stored in the cache of a particular browser. This means opening the site in different browsers may show different carts. CLEARING YOUR CACHE WILL CLEAR YOUR CART"
+    }
+  ]
 }

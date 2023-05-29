@@ -2,6 +2,7 @@ import data from "../data/index.json";
 import { foodDetails } from "../../types";
 import { useState } from "react";
 import FoodDetails from "./FoodDetails";
+import { formatCurrency } from "../utilities/formatCurrency";
 
 const foodData: Array<foodDetails> = data.home;
 
@@ -112,7 +113,7 @@ const Foods = () => {
             <div className="flex items-center justify-between px-2 py-3">
               <p className="font-bold">{item.name}</p>
               <p className="">
-                <span className="text-orange-600 font-bold">N{item.price}</span>
+                <span className="text-orange-600 font-bold">{formatCurrency(item.price)}</span>
               </p>
             </div>
           </div>

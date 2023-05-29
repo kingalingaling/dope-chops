@@ -19,6 +19,7 @@ export interface foodCartCon {
     increaseCartQuantity:(id:number) => void,
     decreaseCartQuantity:(id:number) => void,
     removeFromCart: (id:number) => void
+    emptyCart: () =>void
     cartQuantity: number
     cartItems: cartItem[]
 }
@@ -31,4 +32,22 @@ export type cartItem = {
 export type OrderItemProps = {
     id: number
     quantity: number
+}
+
+export interface chefDetails {
+    id: number,
+    name: string,
+    image: string,
+    role: string,
+    about: string
+}
+
+export interface orderType {
+    id?: string
+    name?: string,
+    email?: string,
+    order?: string,
+    phone_number?: string,
+    delivery_address?: string,
+    timestamp?: Date
 }

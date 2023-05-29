@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { foodCart } from "../context/FoodContext";
+import { formatCurrency } from "../utilities/formatCurrency";
 
 const FoodDetails = (props: any) => {
   const handleChangeState = () => {
@@ -10,10 +10,7 @@ const FoodDetails = (props: any) => {
   // const [numFood, setNumFood] = useState(0);
 
   const {
-    getItemQuantity,
     increaseCartQuantity,
-    decreaseCartQuantity,
-    removeFromCart,
   } = foodCart();
   return (
     props.show && (
@@ -36,8 +33,8 @@ const FoodDetails = (props: any) => {
             </p>
             <p>{foodItem.info}</p>
             <p>
-              <span className="font-bold text-orange-600">Price: </span> N
-              {foodItem.price}
+              <span className="font-bold text-orange-600">Price: </span>
+              {formatCurrency(foodItem.price)}
             </p>
             <div className="pt-10 flex justify-around">
               <button

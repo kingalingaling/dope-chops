@@ -1,24 +1,29 @@
 import { useState } from "react";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineClose, AiFillInfoCircle } from "react-icons/ai";
 import {
   MdFoodBank,
-  MdDeliveryDining,
   MdDinnerDining,
-  MdAccountCircle,
   MdDiscount,
 } from "react-icons/md";
 import { IoMdHelpCircle } from "react-icons/io";
 import { FaUserFriends } from "react-icons/fa";
+import { HiDocumentText } from 'react-icons/hi'
 import Cart from "./Cart";
+import { useNavigate } from "react-router-dom";
+import { foodCart } from "../context/FoodContext";
 
 const Navbar = () => {
   const navItems = [
-    { item: "Menu", icon: <MdDinnerDining size={25} /> },
-    { item: "Account", icon: <MdAccountCircle size={25} /> },
-    { item: "Orders", icon: <MdDeliveryDining size={25} /> },
-    { item: "Help", icon: <IoMdHelpCircle size={25} /> },
-    { item: "Promos", icon: <MdDiscount size={25} /> },
-    { item: "Invite", icon: <FaUserFriends size={25} /> },
+    { item: "Menu", icon: <MdDinnerDining size={25} />, link: "/" },
+    { item: "About", icon: <AiFillInfoCircle size={25} />, link: "/about" },
+    {
+      item: "Privacy Policy",
+      icon: <HiDocumentText size={25} />,
+      link: "/policy",
+    },
+    { item: "Help", icon: <IoMdHelpCircle size={25} />, link: "/help" },
+    { item: "Promos", icon: <MdDiscount size={25} />, link: "/promos" },
+    { item: "Invite", icon: <FaUserFriends size={25} />, link: "/invite" },
   ];
 
   const [nav, setNav] = useState(false);
@@ -28,8 +33,11 @@ const Navbar = () => {
     setCart(newCart);
   };
 
+  let navigate = useNavigate();
+  const { cartItems } = foodCart();
+
   return (
-    <div className="max-w-[1640px] mx-auto flex justify-between items-center px-4 py-2 bg-black/50">
+    <div className="max-w-[1640px] sticky top-0 z-50 mx-auto flex justify-between items-center px-4 py-2 bg-gray-800/95">
       {/* Left Side */}
       <div className="flex items-center">
         <div
@@ -43,16 +51,21 @@ const Navbar = () => {
         <h1 className="text-2xl text-white lg:4xl px-2">
           Dope <span className="font-bold">Chops</span>
         </h1>
-        <div className="hidden lg:flex items-center bg-gray-200 rounded-full p-1 text-md">
+        {/* <div className="hidden lg:flex items-center bg-gray-200 rounded-full p-1 text-md">
           <p className="bg-orange-600 text-white rounded-full p-2">Pickup</p>
           <p className="p-2">Delivery</p>
-        </div>
+        </div> */}
       </div>
       {/* Nav LG */}
       <nav className="hidden lg:block">
         <ul className="flex justify-between items-center pt-4 text-gray-400">
           {navItems.map((i) => (
-            <div className="flex flex-col mx-8 items-center hover:text-white cursor-pointer">
+            <div
+              className="flex flex-col mx-8 items-center hover:text-white cursor-pointer"
+              onClick={() => {
+                navigate(i.link);
+              }}
+            >
               <li className="flex text-xl" key={i.item}>
                 {i.icon}
               </li>
@@ -63,11 +76,14 @@ const Navbar = () => {
       </nav>
       {/* Bag button */}
       <button
-        className=" ml-2 border-none bg-white text-gray-900 hover:bg-orange-600 hover:text-white rounded-full items-center sm:flex py-2"
+        className=" ml-2 relative border-none bg-white text-gray-900 hover:bg-orange-600 hover:text-white rounded-full items-center sm:flex py-3 px-7"
         onClick={() => setCart(true)}
       >
         <MdFoodBank size={20} />
-        Cart
+        <span className="hidden sm:block">Cart</span>
+        <div className={cartItems.length > 0 ? "absolute bottom-0 flex items-center justify-center right-0 text-xs text-white bg-gray-600 h-5 w-5 rounded-full" : 'hidden'}>
+          {cartItems.length}
+        </div>
       </button>
 
       {/* Mobile Menu */}
@@ -102,7 +118,13 @@ const Navbar = () => {
         <nav>
           <ul className="flex flex-col p-4 text-gray-400">
             {navItems.map((i) => (
-              <li className="flex py-4 text-xl justify-between" key={i.item}>
+              <li
+                className="flex py-4 text-xl justify-between cursor-pointer hover:text-white"
+                onClick={() => {
+                  navigate(i.link);
+                }}
+                key={i.item}
+              >
                 {i.icon}
                 {i.item}
               </li>

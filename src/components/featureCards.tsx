@@ -39,12 +39,9 @@ const FeatureCards = () => {
             <p className="text-3xl md:text-4xl font-bold px-4 pt-1.5 md:pt-2.5">
               {i.name}
             </p>
-            <p className="px-4 mt-1.5 md:mt-3">
-              Until <span className="text-orange-300">Next Week</span>
+            <p className="px-4 mt-1.5 md:mt-3 text-xl">
+              Until <span className="text-orange-300 text-2xl">Next Week</span>
             </p>
-            <button className="bg-white border-white text-black mx-4 absolute bottom-4">
-              Order Now
-            </button>
           </div>
           <img
             src={i.image}
