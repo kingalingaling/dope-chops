@@ -9,7 +9,9 @@ import { db } from "../config/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { cartItem } from "../../types";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
+import dotenv from 'dotenv';
 
+dotenv.config();
 const ordersRef = collection(db, "orders");
 
 const Cart = (props: any) => {
@@ -126,7 +128,7 @@ const Cart = (props: any) => {
   };
 
   const config = {
-    public_key: "FLWPUBK_TEST-806225dc5ed1d15c4ac4d78137d018af-X",
+    public_key: process.env.REACT_APP_FLUTTERWAVE_API,
     tx_ref: Date.now().toLocaleString(),
     amount: cost,
     currency: "NGN",

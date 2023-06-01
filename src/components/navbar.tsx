@@ -49,7 +49,7 @@ const Navbar = () => {
         >
           <AiOutlineMenu size={30} />
         </div>
-        <h1 onClick={()=>navigate('/')} className="text-2xl flex items-center justify-center text-white lg:4xl px-2 cursor-pointer">
+        <h1 onClick={()=>navigate('/')} className="text-2xl flex items-center justify-center text-white md:4xl px-2 cursor-pointer">
           Dope <span className="font-bold">Chops</span>
           <img className="h-[50px] w-auto" src={Logo} alt="" />
         </h1>
@@ -60,10 +60,11 @@ const Navbar = () => {
       </div>
       {/* Nav LG */}
       <nav className="hidden lg:block">
-        <ul className="flex justify-between items-center pt-4 text-gray-400">
+        <ul className="flex justify-between items-center pt-4 ">
           {navItems.map((i) => (
             <div
-              className="flex flex-col mx-8 items-center hover:text-white cursor-pointer"
+              className="flex flex-col mx-8 items-center hover:text-white text-gray-500 cursor-pointer"
+              key={i.item}
               onClick={() => {
                 navigate(i.link);
               }}

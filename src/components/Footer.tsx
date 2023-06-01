@@ -9,14 +9,14 @@ const Footer = () => {
             <img className="w-[60px] h-auto" src={Logo} alt="" />
             <h1 className="text-xl font-bold">Dope Chops</h1>
         </div>
-        <div className="font-bold text-center md:w-1/3">&copy; Copyright Dope Chops. All Rights Reserved</div>
-        <div className="font-bold pt:2 md:pt-0 md:w-1/3 hover:text-orange-600 text-right">Contact Us</div>
+        <div className="font-bold text-xs text-center md:w-1/3">&copy; Copyright Dope Chops. All Rights Reserved</div>
+        <div className="font-bold text-xs pt:2 md:pt-0 md:w-1/3 hover:text-orange-600 text-right cursor-pointer">Contact Us</div>
       </div>
       <hr className="w-full" />
       <div className="flex items-center justify-center pt-4">
-        <BsFacebook size={25} className="mx-2" />
-        <BsTwitter size={25} className="mx-2" />
-        <BsInstagram size={25} className="mx-2" />
+        <BsFacebook size={25} className="mx-2 hover:text-blue-600 cursor-pointer" />
+        <BsTwitter size={25} className="mx-2 hover:text-blue-400 cursor-pointer" />
+        <BsInstagram size={25} className="mx-2 cursor-pointer hover:text-pink-500" />
       </div>
     </div>
   );

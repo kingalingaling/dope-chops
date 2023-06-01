@@ -40,7 +40,7 @@ const FeatureCards = () => {
               {i.name}
             </p>
             <p className="px-4 mt-1.5 md:mt-3 text-xl">
-              Until <span className="text-orange-300 text-2xl">Next Week</span>
+              This week's <span className="text-orange-300 text-2xl">Special</span>
             </p>
           </div>
           <img

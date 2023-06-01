@@ -19,7 +19,7 @@ const HelpDetails = () => {
     <BsFillDice5Fill size={100} />,
   ];
   return (
-    <div className="flex flex-col p-4 text-white bg-black/80">
+    <div className="flex flex-col p-4 text-white bg-black/70">
       <h2 className="text-orange-600 font-bold text-3xl text-center lg:text-4xl lg:text-left">
         Need Help Ordering?
       </h2>
