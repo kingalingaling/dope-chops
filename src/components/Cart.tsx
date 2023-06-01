@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import { db } from "../config/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { cartItem } from "../../types";
-// import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
+import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 
 const ordersRef = collection(db, "orders");
 
@@ -56,20 +56,20 @@ const Cart = (props: any) => {
       setEmpty("");
       if (validateEmail(email)) {
         console.log("email is valid");
-        // handleFlutterPayment({
-        //   callback: (response) => {
-        //     console.log(response);
-        //     if (response.status === "completed") {
-        //       navigate("/order-completed");
-        //       emptyCart();
-        //       onSubmitOrder();
-        //     } else {
-        //       navigate("/order-not-completed");
-        //     }
-        //     closePaymentModal(); // this will close the modal programmatically
-        //   },
-        //   onClose: () => {},
-        // });
+        handleFlutterPayment({
+          callback: (response) => {
+            console.log(response);
+            if (response.status === "completed") {
+              navigate("/order-completed");
+              emptyCart();
+              onSubmitOrder();
+            } else {
+              navigate("/order-not-completed");
+            }
+            closePaymentModal(); // this will close the modal programmatically
+          },
+          onClose: () => {},
+        });
       } else {
         setError("Email is Invalid");
       }
@@ -143,7 +143,7 @@ const Cart = (props: any) => {
     },
   };
 
-  // const handleFlutterPayment = useFlutterwave(config);
+  const handleFlutterPayment = useFlutterwave(config);
 
   return (
     props.show && (

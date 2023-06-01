@@ -55,7 +55,7 @@ const OrderItem = ({ id, quantity }: OrderItemProps) => {
       </div>
 
       <div className="flex justify-around items-center w-1/5">
-        <p className="text-right mr-1.5 text-xs font-bold text-orange-600">{formatCurrency(quantity*orderItem.price)}</p>
+        <p className="text-right mr-1.5 text-xs lg:text-md font-bold text-orange-600">{formatCurrency(quantity*orderItem.price)}</p>
         <div className="border border-gray-600 hover:bg-gray-600 hover:text-white rounded-full p-1 cursor-pointer" onClick={() => removeFromCart(orderItem.id)}>
           <AiOutlineClose
           size={10}
