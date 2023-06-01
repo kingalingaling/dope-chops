@@ -26,8 +26,8 @@ const OrderItem = ({ id, quantity }: OrderItemProps) => {
         />
         <div className="flex">
           <div className="flex flex-col">
-            <p className="text-sm md:text-md">{orderItem.name}</p>
-            <p className="text-sm">{formatCurrency(orderItem.price)}</p>
+            <p className="text-xs md:text-md">{orderItem.name}</p>
+            <p className="text-xs text-orange-600 md:text-md">{formatCurrency(orderItem.price)}</p>
           </div>
           {quantity > 1 && <small className="pl-1 text-xs">X{quantity}</small>}
         </div>
@@ -58,6 +58,7 @@ const OrderItem = ({ id, quantity }: OrderItemProps) => {
         <p className="text-right mr-1.5 text-xs font-bold text-orange-600">{formatCurrency(quantity*orderItem.price)}</p>
         <div className="border border-gray-600 hover:bg-gray-600 hover:text-white rounded-full p-1 cursor-pointer" onClick={() => removeFromCart(orderItem.id)}>
           <AiOutlineClose
+          size={10}
             className=""
           />
         </div>

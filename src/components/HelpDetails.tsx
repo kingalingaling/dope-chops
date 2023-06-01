@@ -61,7 +61,7 @@ const HelpDetails = () => {
           Frequently Asked Questions (FAQ)
         </h2>
         {faq.map((i) => (
-          <div className=" border-b-2">
+          <div className=" border-b-2 pb-4">
             <p className="font-bold py-4 text-lg">{i.question}</p>
             <p className="text-lg">{i.answer}</p>
           </div>

@@ -11,6 +11,7 @@ import { HiDocumentText } from 'react-icons/hi'
 import Cart from "./Cart";
 import { useNavigate } from "react-router-dom";
 import { foodCart } from "../context/FoodContext";
+import Logo from '../assets/icons/logo.png';
 
 const Navbar = () => {
   const navItems = [
@@ -48,8 +49,9 @@ const Navbar = () => {
         >
           <AiOutlineMenu size={30} />
         </div>
-        <h1 className="text-2xl text-white lg:4xl px-2">
+        <h1 onClick={()=>navigate('/')} className="text-2xl flex items-center justify-center text-white lg:4xl px-2 cursor-pointer">
           Dope <span className="font-bold">Chops</span>
+          <img className="h-[50px] w-auto" src={Logo} alt="" />
         </h1>
         {/* <div className="hidden lg:flex items-center bg-gray-200 rounded-full p-1 text-md">
           <p className="bg-orange-600 text-white rounded-full p-2">Pickup</p>

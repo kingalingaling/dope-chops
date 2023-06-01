@@ -7,3 +7,17 @@
     @apply border border-black rounded-xl px-5 py-1
   }
 }
+
+/* Class to Hide Cart Scroll Bar */
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide for IE, Edge, Firefox */
+  .no-scrollbar {
+    /* -ms-overflow-style: none; IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}

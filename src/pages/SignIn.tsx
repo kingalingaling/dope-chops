@@ -1,11 +1,9 @@
-import Register from "../components/Register"
-import Navbar from "../components/Navbar";
+import Login from "../components/Login";
 
 const SignIn = () => {
     return(
         <section className="h-screen bg-black/70">
-            <Navbar />
-            <Register />
+            <Login />
         </section>        
     )
 }

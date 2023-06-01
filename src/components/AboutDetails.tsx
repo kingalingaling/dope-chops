@@ -7,7 +7,7 @@ const AboutDetails = () => {
 
   const chefs: chefDetails[] = data.chefs;
   return (
-    <div className="flex h-full w-full flex-col text-white justify-around bg-black/50 p-4 md:p-0 md:px-4 md:pt-4">
+    <div className="flex w-full flex-col text-white justify-center bg-black/50 p-4 md:p-0 md:px-4 md:pt-4">
       <div className="flex flex-col justify-center lg:justify-between items-center w-full">
         <h1 className="text-orange-600 font-bold text-3xl text-center lg:text-4xl lg:text-left">
           About Dope Chops
@@ -22,13 +22,14 @@ const AboutDetails = () => {
           fulfilled over 200 orders and we aren't letting up one bit!
         </p>
       </div>
+
       {/* Team */}
-      <div className="flex flex-col items-center py-4 md:py-0 md:pt-4 md:items-start">
+      <div className="flex flex-col items-center py-4 md:py-0 md:pt-4 md:items-start md:mt-16">
         <h1 className="text-orange-600 pt-4 font-bold text-3xl text-center lg:text-4xl lg:text-left">
           Meet Our Chefs
         </h1>
         <div className="flex flex-col items-center justify-center md:flex-col-reverse lg:flex-row-reverse">
-          <div className="flex w-4/5 h-full flex-col items-center justify-center pt-8 ">
+          <div className="flex w-4/5 flex-col items-center justify-center pt-8">
             <img className="h-full w-auto" src={chefs[chef].image} alt="" />
             <hr className="h-[0.5px] w-full border-gray-500 md:hidden" />
           </div>
