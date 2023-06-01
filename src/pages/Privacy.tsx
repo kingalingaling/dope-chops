@@ -3,7 +3,7 @@ import PrivacyPolicy from "../components/PrivacyPolicy";
 
 const Privacy = () => {
   return (
-    <section className="h-screen bg-gray-800">
+    <section className="bg-gray-800">
       <Navbar />
       <PrivacyPolicy />
     </section>
