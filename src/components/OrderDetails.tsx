@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { formatCurrency } from "../utilities/formatCurrency";
 
 const OrderDetails = (props: any) => {
   const handleChangeState = () => {

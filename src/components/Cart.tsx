@@ -128,7 +128,7 @@ const Cart = (props: any) => {
   };
 
   const config = {
-    public_key: process.env.REACT_APP_FLUTTERWAVE_API,
+    public_key: `${process.env.REACT_APP_FLUTTERWAVE_API}`,
     tx_ref: Date.now().toLocaleString(),
     amount: cost,
     currency: "NGN",
