@@ -3,9 +3,9 @@ import { ImConfused } from "react-icons/im";
 
 const PageNotFound = () => {
   return (
-    <section className="bg-gray-800 h-screen">
+    <section className="bg-gray-800">
       <Navbar />
-      <div className="flex h-full flex-col justify-center items-center bg-black/50 text-white">
+      <div className="flex h-screen flex-col justify-center items-center bg-black/50 text-white">
         <ImConfused size={200} />
         <p className="text-center text-orange-600 text-3xl py-3 font-black">Error: 404</p>
         <p className="text-center font-bold">

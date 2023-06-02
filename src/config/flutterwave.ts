@@ -7,7 +7,6 @@ const flutterwaveConfig = (
 ) => {
   const config = {
     public_key: import.meta.env.VITE_FLUTTERWAVE_API,
-    // public_key: 'FLWPUBK_TEST-806225dc5ed1d15c4ac4d78137d018af-X',
     tx_ref: Date.now().toLocaleString(),
     amount: cost,
     currency: "NGN",
