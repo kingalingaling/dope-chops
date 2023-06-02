@@ -11,7 +11,7 @@ import { HiDocumentText } from 'react-icons/hi'
 import Cart from "./Cart";
 import { useNavigate } from "react-router-dom";
 import { foodCart } from "../context/FoodContext";
-import Logo from '../assets/icons/logo.png';
+import Logo from '/assets/logo.png';
 
 const Navbar = () => {
   const navItems = [
