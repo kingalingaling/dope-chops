@@ -10,6 +10,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { cartItem } from "../../types";
 import { usePaystackPayment } from "react-paystack";
 import PaystackConfig from "../config/paystack";
+import { serverTimestamp } from "firebase/firestore";
 
 const ordersRef = collection(db, "orders");
 
@@ -48,12 +49,12 @@ const Cart = (props: any) => {
     return /\S+@\S+\.\S+/.test(email);
   };
 
-  const onSuccess = (reference:string) => {
+  const onSuccess = () => {
     //implementation for after success call
     onSubmitOrder();
     navigate("/order-completed");
     emptyCart();
-    console.log(reference);
+    console.log('success');
   };
 
   const onClose = () => {
@@ -122,7 +123,7 @@ const Cart = (props: any) => {
         delivery_fee: deliveryFee,
         phone_number: phone,
         delivery_address: address,
-        timestamp: new Date(),
+        timestamp: serverTimestamp(),
         fulfilled: false,
       });
     } catch (err) {

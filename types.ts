@@ -1,3 +1,5 @@
+import { Timestamp } from "firebase/firestore"
+
 export interface foodDetails {
     id: number,
     name: string,
@@ -49,5 +51,5 @@ export interface orderType {
     order?: string,
     phone_number?: string,
     delivery_address?: string,
-    timestamp?: Date
+    timestamp?: Timestamp
 }

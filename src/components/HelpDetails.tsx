@@ -35,8 +35,8 @@ const HelpDetails = () => {
             className="border-none text-white text-center shadow-sm rounded-lg"
           >
             <div className="flex justify-center">{tags[i.id]}</div>
-            <div className="flex items-center justify-between px-2 py-3">
-              <p className="font-bold">{i.instruction}</p>
+            <div className="flex items-center justify-center px-2 py-3">
+              <p className="font-bold text-center">{i.instruction}</p>
             </div>
           </div>
         ))}

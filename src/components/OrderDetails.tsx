@@ -1,12 +1,13 @@
 import { useState } from "react";
+import { formatCurrency } from "../utilities/formatCurrency";
 
 const OrderDetails = (props: any) => {
   const handleChangeState = () => {
     props.onSetOnView(false);
   };
 
-  const [fulfilled, setFulfilled] = useState(false);
   const order = props.order;
+  const [fulfilled, setFulfilled] = useState(false);
   return (
     props.show && (
       <div className="flex flex-col justify-center items-center">
@@ -16,9 +17,12 @@ const OrderDetails = (props: any) => {
         ></div>
         <div className="fixed top-32 md:top-1/4 mx-auto my-auto z-20 border-black bg-gray-800 text-white shadow-xl duration-300 rounded-lg p-4 w-4/5 sm:w-[600px]">
           <div className="flex flex-col justify-between px-2 py-3">
-            <h2 className="font-bold text-xl text-orange-600">
-              Order ID: {order.id}
-            </h2>
+            <div className="flex justify-between items-center">
+              <h2 className="font-bold text-lg text-orange-600">
+                Order ID: {order.id}
+              </h2>
+              <p className="text-orange-400 text-sm font-bold">{new Date(order.timestamp.seconds*1000).toLocaleString('en-NG')}</p>
+            </div>
             <div className="flex justify-between pt-4">
               <p className="font-bold">{order.name}</p>
               <div className="border-r-2 border-white"></div>
@@ -29,11 +33,16 @@ const OrderDetails = (props: any) => {
               <p className="font-bold">{order.phone_number}</p>
             </div>
             <div className="pt-4">
-              <p className="font-bold">Order Details: {order.order}</p>
+              <p className="font-bold">
+                Order Details: {order.order.join(", ")}
+              </p>
               <p>
                 <span className="font-bold">Delivery Address: </span>
                 {order.delivery_address}
               </p>
+              <p>Food Cost: {formatCurrency(order.cost)}</p>
+              <p>Delivery Fee: {formatCurrency(order.delivery_fee)}</p>
+              <p>Order Notes: {order.order_notes}</p>
             </div>
             {/* <p>
               <span className="font-bold text-orange-600">Category: </span>{" "}

@@ -37,17 +37,17 @@ const Login = () => {
   return (
     <div className="h-full text-white">
       {/* Left column container with background */}
-      <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
+      <div className="g-6 flex-col md:flex h-full flex-wrap items-center justify-center lg:justify-between">
         <div className="shrink-1 mb-12 grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12">
           <img
             src={signInImage}
-            className="w-3/4 mx-auto"
+            className="w-3/4 lg:w-3/4 mx-auto"
             alt="Sample image"
           />
         </div>
 
         {/* Right column container */}
-        <div className="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 lg:pr-6 xl:w-5/12">
+        <div className="mb-12 md:mb-0 md:w-8/12 p-4 md:p-0 lg:w-5/12 lg:pr-6 xl:w-5/12">
           <form onSubmit={handleLogin}>
             {/* Sign in section */}
             <div className="flex flex-row items-center justify-center lg:justify-start">

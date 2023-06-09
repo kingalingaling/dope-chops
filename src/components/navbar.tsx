@@ -3,10 +3,8 @@ import { AiOutlineMenu, AiOutlineClose, AiFillInfoCircle } from "react-icons/ai"
 import {
   MdFoodBank,
   MdDinnerDining,
-  MdDiscount,
 } from "react-icons/md";
 import { IoMdHelpCircle } from "react-icons/io";
-import { FaUserFriends } from "react-icons/fa";
 import { HiDocumentText } from 'react-icons/hi'
 import Cart from "./Cart";
 import { useNavigate } from "react-router-dom";
@@ -23,8 +21,6 @@ const Navbar = () => {
       link: "/policy",
     },
     { item: "Help", icon: <IoMdHelpCircle size={25} />, link: "/help" },
-    { item: "Promos", icon: <MdDiscount size={25} />, link: "/promos" },
-    { item: "Invite", icon: <FaUserFriends size={25} />, link: "/invite" },
   ];
 
   const [nav, setNav] = useState(false);

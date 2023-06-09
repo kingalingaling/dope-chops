@@ -15,7 +15,8 @@ const OrdersView = () => {
   };
 
   useEffect(
-    () =>
+    () =>{const getData = async() =>
+    {
       onSnapshot(ordersRef, (snapshot: QuerySnapshot<DocumentData>) => {
         setOrders(
           snapshot.docs.map((doc) => {
@@ -25,7 +26,9 @@ const OrdersView = () => {
             };
           })
         );
-      }),
+      })
+    }
+  getData()},
     []
   );
   return (
@@ -39,8 +42,8 @@ const OrdersView = () => {
           onClick={() => {setOrderData(order); setOnView(true);}}>
             <div className="f">
               <h2>Order ID: {order.id}</h2>
-              <p>{order.name}</p>
-              {/* <p>{order.timestamp?.toDateString()}</p> */}
+              <p>Name: <span className="font-bold">{order.name}</span></p>
+              <p>Timestamp <span className="font-bold">{order.timestamp? new Date(order.timestamp.seconds*1000).toLocaleString('en-NG'):''}</span></p>
             </div>
             <button className="rounded-full border-none bg-white text-black hover:bg-orange-600 hover:text-white">
                 Details
