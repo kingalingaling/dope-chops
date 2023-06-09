@@ -8,6 +8,7 @@ import Help from '../pages/Help'
 import Admin from "../pages/Admin";
 import SignIn from "../pages/SignIn";
 import PageNotFound from '../pages/PageNotFound';
+import OrderFailed from "../pages/OrderFailed";
 
 const routes = createBrowserRouter([
     {path: '/', element: <Home />},
@@ -17,6 +18,7 @@ const routes = createBrowserRouter([
     {path: '/help', element: <Help />},
     {path: '/order-completed', element: <OrderCompleted />},
     {path: '/admin/sign-in', element: <SignIn />},
+    {path: '/order-failed', element: <OrderFailed />},
     {path:'*', element: <PageNotFound />}
 ])
 

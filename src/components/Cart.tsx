@@ -8,11 +8,9 @@ import { useState, useEffect } from "react";
 import { db } from "../config/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { cartItem } from "../../types";
-import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
-import flutterwaveConfig from "../config/flutterwave";
-// import dotenv from 'dotenv';
+import { usePaystackPayment } from "react-paystack";
+import PaystackConfig from "../config/paystack";
 
-// dotenv.config();
 const ordersRef = collection(db, "orders");
 
 const Cart = (props: any) => {
@@ -23,7 +21,7 @@ const Cart = (props: any) => {
   const [address, setAddress] = useState("");
   const [error, setError] = useState("");
   const [empty, setEmpty] = useState("");
-  const [notes, setNotes] = useState("")
+  const [notes, setNotes] = useState("");
   const [cost, setCost] = useState(0);
 
   const handleChangeState = () => {
@@ -50,6 +48,23 @@ const Cart = (props: any) => {
     return /\S+@\S+\.\S+/.test(email);
   };
 
+  const onSuccess = (reference:string) => {
+    //implementation for after success call
+    onSubmitOrder();
+    navigate("/order-completed");
+    emptyCart();
+    console.log(reference);
+  };
+
+  const onClose = () => {
+    navigate("/order-failed");
+    //Implementation for when dialog closes
+    console.log("closed");
+  };
+
+  const config = PaystackConfig(email, cost, deliveryFee);
+  const initializePayment = usePaystackPayment(config);
+
   const handleCheckout = () => {
     if (validateInput(name) && validateInput(phone) && validateInput(address)) {
       setEmpty(
@@ -59,20 +74,7 @@ const Cart = (props: any) => {
       setEmpty("");
       if (validateEmail(email)) {
         console.log("email is valid");
-        handleFlutterPayment({
-          callback: (response) => {
-            console.log(response);
-            if (response.status === "completed") {
-              navigate("/order-completed");
-              emptyCart();
-              onSubmitOrder();
-            } else {
-              navigate("/order-not-completed");
-            }
-            closePaymentModal(); // this will close the modal programmatically
-          },
-          onClose: () => {},
-        });
+        initializePayment(onSuccess, onClose);
       } else {
         setError("Email is Invalid");
       }
@@ -91,14 +93,14 @@ const Cart = (props: any) => {
     // Retrieve data from local storage on component mount
     const dataFromLocalStorage: cartItem[] = cartItems;
     const foodOrdered = dataFromLocalStorage.map((food) => {
-      return [data.home[food.id].name, food.quantity].join(": ") + " & ";
+      return [data.home[food.id].name, food.quantity].join(": ");
     });
     setOrder(foodOrdered);
     setCost(
-        cartItems.reduce((total, cartItem) => {
-          const orderItem = data.home.find((i) => i.id === cartItem.id);
-          return total + (orderItem?.price || 0) * cartItem.quantity;
-        }, 0)
+      cartItems.reduce((total, cartItem) => {
+        const orderItem = data.home.find((i) => i.id === cartItem.id);
+        return total + (orderItem?.price || 0) * cartItem.quantity;
+      }, 0)
     );
   }, [cartItems]);
 
@@ -121,33 +123,12 @@ const Cart = (props: any) => {
         phone_number: phone,
         delivery_address: address,
         timestamp: new Date(),
-        fulfilled: false
+        fulfilled: false,
       });
     } catch (err) {
       console.error(err);
     }
   };
-
-  // const config = {
-  //   public_key: `${process.env.REACT_APP_FLUTTERWAVE_API}`,
-  //   tx_ref: Date.now().toLocaleString(),
-  //   amount: cost,
-  //   currency: "NGN",
-  //   payment_options: "card,mobilemoney,ussd",
-  //   customer: {
-  //     email: email,
-  //     phone_number: phone,
-  //     name: name,
-  //   },
-  //   customizations: {
-  //     title: "Dope Chops Payment",
-  //     description: `Payment for ${order}`,
-  //     logo: "https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg",
-  //   },
-  // };
-
-  const config = flutterwaveConfig(cost, email, phone, name, order)
-  const handleFlutterPayment = useFlutterwave(config);
 
   return (
     props.show && (
@@ -202,7 +183,9 @@ const Cart = (props: any) => {
 
               <div className="flex justify-between mt-3 font-bold">
                 <p>TOTAL</p>
-                <p className="text-orange-500">{formatCurrency(cost + deliveryFee)}</p>
+                <p className="text-orange-500">
+                  {formatCurrency(cost + deliveryFee)}
+                </p>
               </div>
               <div>
                 <h2 className="py-2 font-bold text-lg text-orange-600">
@@ -263,7 +246,8 @@ const Cart = (props: any) => {
 
                   {/* Notes */}
                   <label htmlFor="address" className="font-bold text-xs">
-                    Notes <small> (Any additional requests, preferernces)</small>
+                    Notes{" "}
+                    <small> (Any additional requests, preferernces)</small>
                   </label>
                   <textarea
                     className="border outline-orange-400 rounded-lg border-gray-500 px-2 w-full"

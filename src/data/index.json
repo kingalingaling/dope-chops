@@ -12,17 +12,6 @@
       "featured": false
     },
     {
-      "id": 7,
-      "name": "Hot Spicy Chicken",
-      "category": "Meats",
-      "image": "/assets/images/spicy-chicken.jpg",
-      "info": "Chicken fried in a peppery sauce",
-      "num": 5,
-      "price": 5000,
-      "priceRange": "$$$",
-      "featured": true
-    },
-    {
       "id": 1,
       "name": "No-Icing Cupcakes",
       "category": "Cakes",
@@ -34,14 +23,14 @@
       "featured": false
     },
     {
-      "id": 4,
-      "name": "Frosted Cupcakes",
-      "category": "Cakes",
-      "image": "/assets/images/cupcakes.jpg",
-      "info": "Cupcakes topped beautifully with a blend of whipped cream and frostings",
-      "num": 6,
-      "price": 5000,
-      "priceRange": "$$$",
+      "id": 2,
+      "name": "Spring Rolls",
+      "category": "Pastries",
+      "image": "/assets/images/spring-rolls.jpg",
+      "info": "Our vegeratian spring rolls are made with only the freshest vegetables, hand-picked from our very own garden",
+      "num": 8,
+      "price": 2000,
+      "priceRange": "$",
       "featured": false
     },
     {
@@ -56,14 +45,14 @@
       "featured": false
     },
     {
-      "id": 2,
-      "name": "Spring Rolls",
-      "category": "Pastries",
-      "image": "/assets/images/spring-rolls.jpg",
-      "info": "Our vegeratian spring rolls are made with only the freshest vegetables, hand-picked from our very own garden",
-      "num": 8,
-      "price": 2000,
-      "priceRange": "$",
+      "id": 4,
+      "name": "Frosted Cupcakes",
+      "category": "Cakes",
+      "image": "/assets/images/cupcakes.jpg",
+      "info": "Cupcakes topped beautifully with a blend of whipped cream and frostings",
+      "num": 6,
+      "price": 5000,
+      "priceRange": "$$$",
       "featured": false
     },
     {
@@ -87,6 +76,17 @@
       "price": 4000,
       "priceRange": "$$",
       "featured": false
+    },
+    {
+      "id": 7,
+      "name": "Hot Spicy Chicken",
+      "category": "Meats",
+      "image": "/assets/images/spicy-chicken.jpg",
+      "info": "Chicken fried in a peppery sauce",
+      "num": 5,
+      "price": 5000,
+      "priceRange": "$$$",
+      "featured": true
     },
     {
       "id": 8,
