@@ -128,24 +128,6 @@ const Cart = (props: any) => {
     }
   };
 
-  // const config = {
-  //   public_key: `${process.env.REACT_APP_FLUTTERWAVE_API}`,
-  //   tx_ref: Date.now().toLocaleString(),
-  //   amount: cost,
-  //   currency: "NGN",
-  //   payment_options: "card,mobilemoney,ussd",
-  //   customer: {
-  //     email: email,
-  //     phone_number: phone,
-  //     name: name,
-  //   },
-  //   customizations: {
-  //     title: "Dope Chops Payment",
-  //     description: `Payment for ${order}`,
-  //     logo: "https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg",
-  //   },
-  // };
-
   const config = flutterwaveConfig(cost, email, phone, name, order)
   const handleFlutterPayment = useFlutterwave(config);
 
