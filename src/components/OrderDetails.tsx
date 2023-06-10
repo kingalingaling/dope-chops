@@ -58,6 +58,7 @@ const OrderDetails = (props: any) => {
                     setNewFulfilled(false);
                     updateFulfilled(order.id, {fulfilled:false});  
                     handleChangeState();
+                    console.log(newFulfilled)
                   }}
                 >
                   Mark as Unfulfilled
