@@ -43,7 +43,7 @@ const OrdersView = () => {
             <div className="f">
               <h2>Order ID: {order.id}</h2>
               <p>Name: <span className="font-bold">{order.name}</span></p>
-              <p>Timestamp <span className="font-bold">{order.timestamp? new Date(order.timestamp.seconds*1000).toLocaleString('en-NG'):''}</span></p>
+              <p>Timestamp: <span className="font-bold">{order.timestamp? new Date(order.timestamp.seconds*1000).toLocaleString('en-NG'):''}</span></p>
             </div>
             <button className="rounded-full border-none bg-white text-black hover:bg-orange-600 hover:text-white">
                 Details

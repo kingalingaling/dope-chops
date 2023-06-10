@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { formatCurrency } from "../utilities/formatCurrency";
+import { updateFulfilled } from "../config/controller";
 
 const OrderDetails = (props: any) => {
   const handleChangeState = () => {
@@ -7,7 +8,8 @@ const OrderDetails = (props: any) => {
   };
 
   const order = props.order;
-  const [fulfilled, setFulfilled] = useState(false);
+  const [newFulfilled, setNewFulfilled] = useState<boolean>();
+
   return (
     props.show && (
       <div className="flex flex-col justify-center items-center">
@@ -33,42 +35,39 @@ const OrderDetails = (props: any) => {
               <p className="font-bold">{order.phone_number}</p>
             </div>
             <div className="pt-4">
-              <p className="font-bold">
-                Order Details: {order.order.join(", ")}
+              <p className="">
+                <span className="font-bold">Order Details - </span> {order.order.join(", ")}
               </p>
               <p>
                 <span className="font-bold">Delivery Address: </span>
                 {order.delivery_address}
               </p>
-              <p>Food Cost: {formatCurrency(order.cost)}</p>
-              <p>Delivery Fee: {formatCurrency(order.delivery_fee)}</p>
-              <p>Order Notes: {order.order_notes}</p>
+              <p><span className="font-bold">Food Cost: </span>{formatCurrency(order.cost)}</p>
+              <p><span className="font-bold">Delivery Fee: </span>{formatCurrency(order.delivery_fee)}</p>
+              <p><span className="font-bold">Order Notes: </span>{order.order_notes}</p>
             </div>
-            {/* <p>
-              <span className="font-bold text-orange-600">Category: </span>{" "}
-              {foodItem.category}
-            </p>
-            <p>{foodItem.info}</p>
-            <p>
-              <span className="font-bold text-orange-600">Price: </span>
-              {formatCurrency(foodItem.price)}
-            </p> */}
+            <hr className="w-full my-2" />
+            <div>
+            <span className="font-bold">Order Status: </span>{order.fulfilled? 'Fulfilled': 'Not Fulfilled'}
+            </div>
             <div className="pt-10 flex justify-center">
-              {fulfilled ? (
+              {newFulfilled ? (
                 <button
                   className="bg-white border-white text-black hover:text-white hover:bg-gray-600 hover:border-gray-600 mx-4 absolute bottom-4 left-4"
                   onClick={() => {
-                    setFulfilled(false);
+                    setNewFulfilled(false);
+                    updateFulfilled(order.id, {fulfilled:false});  
                     handleChangeState();
                   }}
                 >
                   Mark as Unfulfilled
                 </button>
-              ) : (
+              ) : ( 
                 <button
                   className="bg-white border-white text-black hover:text-white hover:bg-orange-600 hover:border-orange-600 mx-4 absolute bottom-4 right-4"
                   onClick={() => {
-                    setFulfilled(true);
+                    setNewFulfilled(true);
+                    updateFulfilled(order.id, {fulfilled:true});
                     handleChangeState();
                   }}
                 >

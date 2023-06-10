@@ -51,5 +51,8 @@ export interface orderType {
     order?: string,
     phone_number?: string,
     delivery_address?: string,
-    timestamp?: Timestamp
+    timestamp?: Timestamp,
+    fulfilled?:boolean,
+    cost?: number,
+    delivery_fee?: number
 }

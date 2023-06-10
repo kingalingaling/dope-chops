@@ -124,7 +124,7 @@ const Cart = (props: any) => {
         phone_number: phone,
         delivery_address: address,
         timestamp: serverTimestamp(),
-        fulfilled: false,
+        fulfilled: 0,
       });
     } catch (err) {
       console.error(err);
@@ -272,7 +272,6 @@ const Cart = (props: any) => {
             </div>
           )}
         </div>
-        <script src="hiitp://checkout.flutterwave.com/v3.js"></script>
       </>
     )
   );
