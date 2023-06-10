@@ -10,15 +10,14 @@ import { ImCancelCircle } from "react-icons/im";
 const OrdersView = () => {
   const [orders, setOrders] = useState<orderType[]>([]);
   const [onView, setOnView] = useState(false);
-  const [orderData,setOrderData] = useState<orderType>()
+  const [orderData, setOrderData] = useState<orderType>();
 
   const onSetOnView = (newOnView: any) => {
     setOnView(newOnView);
   };
 
-  useEffect(
-    () =>{const getData = async() =>
-    {
+  useEffect(() => {
+    const getData = async () => {
       onSnapshot(ordersRef, (snapshot: QuerySnapshot<DocumentData>) => {
         setOrders(
           snapshot.docs.map((doc) => {
@@ -28,11 +27,10 @@ const OrdersView = () => {
             };
           })
         );
-      })
-    }
-  getData()},
-    []
-  );
+      });
+    };
+    getData();
+  }, []);
   return (
     <div className="bg-black/70 h-full text-white p-4">
       <h2 className="text-3xl text-center font-black">View Orders</h2>
@@ -40,19 +38,39 @@ const OrdersView = () => {
       {/* Order Details */}
       {orders && orders.length ? (
         orders?.map((order) => (
-          <div className="flex rounded-lg w-full p-2 my-2 shadow-md shadow-black/20 justify-between bg-gray-100/20"
-          onClick={() => {setOrderData(order); setOnView(true);}}>
+          <div
+            className="flex rounded-lg w-full p-2 my-2 shadow-md shadow-black/20 justify-between bg-gray-100/20"
+            onClick={() => {
+              setOrderData(order);
+              setOnView(true);
+            }}
+          >
             <div className="">
               <h2>Order ID: {order.id}</h2>
-              <p>Name: <span className="font-bold">{order.name}</span></p>
-              <p>Timestamp: <span className="font-bold">{order.timestamp? new Date(order.timestamp.seconds*1000).toLocaleString('en-NG'):''}</span></p>
+              <p>
+                Name: <span className="font-bold">{order.name}</span>
+              </p>
+              <p>
+                Timestamp:{" "}
+                <span className="font-bold">
+                  {order.timestamp
+                    ? new Date(order.timestamp.seconds * 1000).toLocaleString(
+                        "en-NG"
+                      )
+                    : ""}
+                </span>
+              </p>
             </div>
             <div className="flex flex-col justify-center items-center">
               <p>Order Status</p>
-              {order.fulfilled? <BiCheckCircle size={24} /> : <ImCancelCircle size={20} />}
+              {order.fulfilled ? (
+                <BiCheckCircle size={24} className="text-green-600" />
+              ) : (
+                <ImCancelCircle size={20} className="text-red-600" />
+              )}
             </div>
             <button className="rounded-full border-none bg-white text-black hover:bg-orange-600 hover:text-white">
-                Details
+              Details
             </button>
           </div>
         ))
