@@ -51,7 +51,7 @@ const OrderDetails = (props: any) => {
             <span className="font-bold">Order Status: </span>{order.fulfilled? 'Fulfilled': 'Not Fulfilled'}
             </div>
             <div className="pt-10 flex justify-center">
-              {newFulfilled ? (
+              {order.fulfilled ? (
                 <button
                   className="bg-white border-white text-black hover:text-white hover:bg-gray-600 hover:border-gray-600 mx-4 absolute bottom-4 left-4"
                   onClick={() => {
