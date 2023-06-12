@@ -11,6 +11,7 @@ const OrdersView = () => {
   const [orders, setOrders] = useState<orderType[]>([]);
   const [onView, setOnView] = useState(false);
   const [orderData, setOrderData] = useState<orderType>();
+  const [sort, setSort] = useState<string>();
 
   const onSetOnView = (newOnView: any) => {
     setOnView(newOnView);
@@ -31,26 +32,57 @@ const OrdersView = () => {
     };
     getData();
   }, []);
-  return (
-    <div className="bg-black/70 h-full text-white p-4">
-      <h2 className="text-3xl text-center font-black">View Orders</h2>
 
+  const sortedOrders = orders?.sort((a, b) => {
+    if (sort === "name") {
+      if (a.name && b.name) {
+        return a.name.localeCompare(b.name);
+      }
+    }
+    if (sort === "timestamp") {
+      if (a.timestamp && b.timestamp) {
+        return a.timestamp.toMillis() - b.timestamp.toMillis();
+      }
+    }
+    if (sort === "cost") {
+      return Number(a.cost) - Number(b.cost);
+    }
+    return 0;
+  });
+
+  return (
+    <div className="bg-black/70 h-screen text-white p-4">
+      <h2 className="text-3xl text-center font-black">View Orders</h2>
+      <div className="py-3 flex flex-col items-center justify-center">
+        <h2 className="text-2xl mb-2 text-center">Sort Orders</h2>
+        <select
+          className="p-2 rounded-xl w-36 bg-white text-gray-900"
+          defaultValue={""}
+          onChange={(e) => setSort(e.target.value)}
+        >
+          <option value=""></option>
+          <option value="timestamp">Date Ordered</option>
+          <option value="name">Name</option>
+          <option value="cost">Order Total</option>
+        </select>
+      </div>
       {/* Order Details */}
       {orders && orders.length ? (
-        orders?.map((order) => (
+        sortedOrders?.map((order) => (
           <div
             className="flex rounded-lg w-full p-2 my-2 shadow-md shadow-black/20 justify-between bg-gray-100/20"
             onClick={() => {
               setOrderData(order);
               setOnView(true);
             }}
+            key={order.id}
           >
             <div className="">
               <h2>Order ID: {order.id}</h2>
               <p>
                 Name: <span className="font-bold">{order.name}</span>
               </p>
-              <p>
+              <p className="hidden md:block">
                 Timestamp:{" "}
                 <span className="font-bold">
                   {order.timestamp
@@ -62,14 +94,20 @@ const OrdersView = () => {
               </p>
             </div>
             <div className="flex flex-col justify-center items-center">
-              <p>Order Status</p>
+              <p className="text-center mr-2 md:mr-0">Order Status</p>
               {order.fulfilled ? (
-                <BiCheckCircle size={24} className="text-green-600" />
+                <BiCheckCircle
+                  size={24}
+                  className="text-green-600 text-center"
+                />
               ) : (
-                <ImCancelCircle size={20} className="text-red-600" />
+                <ImCancelCircle
+                  size={20}
+                  className="text-red-600 text-center"
+                />
               )}
             </div>
-            <button className="rounded-full border-none bg-white text-black hover:bg-orange-600 hover:text-white">
+            <button className="rounded-xl p-2 border-none bg-white text-black hover:bg-orange-600 hover:text-white">
               Details
             </button>
           </div>

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { formatCurrency } from "../utilities/formatCurrency";
-import { deleteOrder, updateFulfilled } from "../config/controller";
+import { deleteOrder, updateFulfilled, updateFulfilledTime } from "../config/controller";
 import { ImBin } from "react-icons/im";
+import { serverTimestamp } from "firebase/firestore";
 
 const OrderDetails = (props: any) => {
   const handleChangeState = () => {
@@ -127,6 +128,7 @@ const OrderDetails = (props: any) => {
                   onClick={() => {
                     setNewFulfilled(true);
                     updateFulfilled(order.id, { fulfilled: true });
+                    updateFulfilledTime(order.id, {fulfilled_time: serverTimestamp()})
                     handleChangeState();
                   }}
                 >

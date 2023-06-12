@@ -2,7 +2,7 @@ import Login from "../components/Login";
 
 const SignIn = () => {
     return(
-        <section className="h-screen bg-black/70">
+        <section className="bg-black/70">
             <Login />
         </section>        
     )

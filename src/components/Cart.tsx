@@ -125,6 +125,7 @@ const Cart = (props: any) => {
         delivery_address: address,
         timestamp: serverTimestamp(),
         fulfilled: 0,
+        fulfilled_time: null
       });
     } catch (err) {
       console.error(err);

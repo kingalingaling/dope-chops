@@ -29,7 +29,7 @@ const Admin = () => {
   };
 
   return (
-    <section className="bg-gray-800 h-screen">
+    <section className="bg-gray-800">
       <AdminNavbar />
       <div className="flex items-center justify-center pt-5 bg-black/70">
         <button
@@ -38,6 +38,7 @@ const Admin = () => {
         >
           Logout
         </button>
+        
       </div>
       <OrdersView />
     </section>

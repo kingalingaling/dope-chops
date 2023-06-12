@@ -45,7 +45,7 @@ export interface chefDetails {
 }
 
 export interface orderType {
-    id?: string
+    id?: string,
     name?: string,
     email?: string,
     order?: string,
@@ -53,6 +53,7 @@ export interface orderType {
     delivery_address?: string,
     timestamp?: Timestamp,
     fulfilled?:boolean,
+    fulfilled_time:Timestamp,
     cost?: number,
     delivery_fee?: number
 }
