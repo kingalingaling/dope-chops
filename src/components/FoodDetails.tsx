@@ -33,6 +33,10 @@ const FoodDetails = (props: any) => {
             </p>
             <p>{foodItem.info}</p>
             <p>
+              <span className="font-bold text-orange-600">Quantity: </span>
+              {formatCurrency(foodItem.num)}{' '} Pieces
+            </p>
+            <p>
               <span className="font-bold text-orange-600">Price: </span>
               {formatCurrency(foodItem.price)}
             </p>
