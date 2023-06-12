@@ -230,9 +230,14 @@
       "answer": "As mentioned above, there is no account management. Cart data is stored locally. This means you can't access the same cart items from different devices"
     },
     {
-      "id": 3,
+      "id": 2,
       "question": "Okay but I can't access my cart still. Same device",
       "answer": "Cart details are stored in the cache of a particular browser. This means opening the site in different browsers may show different carts. CLEARING YOUR CACHE WILL CLEAR YOUR CART"
+    },
+    {
+      "id": 3,
+      "question": "Why does it take a whole day to deliver my order?",
+      "answer": "Because we want your meals to be delivered fresh to you, we collect orders and then prepare them within a day of your order. Because we are not a big restaurant with food always ready to go, and we cannot ensure our food sells out within a day, we make and deliver based on preorders. This helps us give our best!!"
     }
   ]
 }

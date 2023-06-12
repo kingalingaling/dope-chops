@@ -19,7 +19,8 @@ const AboutDetails = () => {
           moved from selling on WhatsApp and Facebook to having her own trusted
           and secure site. Karen is joined by her sister, Sheva as well as
           friends at Dope Chops to help deliver delicious meals. We have
-          fulfilled over 200 orders and we aren't letting up one bit!
+          fulfilled over 200 orders and we aren't letting up one bit! <br />
+          Make an order and have your meals delivered the very next day!
         </p>
       </div>
 

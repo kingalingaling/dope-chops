@@ -53,7 +53,7 @@ export interface orderType {
     delivery_address?: string,
     timestamp?: Timestamp,
     fulfilled?:boolean,
-    fulfilled_time:Timestamp,
+    fulfilled_time?:Timestamp,
     cost?: number,
     delivery_fee?: number
 }
