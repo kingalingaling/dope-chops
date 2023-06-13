@@ -67,7 +67,7 @@ const Cart = (props: any) => {
   const initializePayment = usePaystackPayment(config);
 
   const handleCheckout = () => {
-    if (validateInput(name) && validateInput(phone) && validateInput(address)) {
+    if (validateInput(name) || validateInput(phone) || validateInput(address)) {
       setEmpty(
         "All fields except 'Notes' are required. Please ensure you have filled in the correct information to avoid errors"
       );

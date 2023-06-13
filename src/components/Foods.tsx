@@ -110,8 +110,8 @@ const Foods = () => {
               alt={item.name}
               className="w-full h-[150px] md:h-[200px] object-cover rounded-t-lg"
             />
-            <div className="flex items-center justify-between px-2 py-3">
-              <p className="font-bold">{item.name}</p>
+            <div className="flex flex-col md:flex-row items-center justify-between px-2 py-3">
+              <p className="font-bold text-center md:text-left">{item.name}</p>
               <p className="">
                 <span className="text-orange-600 font-bold">{formatCurrency(item.price)}</span>
               </p>

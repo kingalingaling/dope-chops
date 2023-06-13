@@ -51,7 +51,7 @@ const OrdersView = () => {
   });
 
   return (
-    <div className="bg-black/70 h-screen text-white p-4">
+    <div className="bg-black/70 h-full text-white p-5 pb-4">
       <h2 className="text-3xl text-center font-black">View Orders</h2>
       <div className="py-3 flex flex-col items-center justify-center">
         <h2 className="text-2xl mb-2 text-center">Sort Orders</h2>
@@ -70,20 +70,19 @@ const OrdersView = () => {
       {orders && orders.length ? (
         sortedOrders?.map((order) => (
           <div
-            className="flex rounded-lg w-full p-2 my-2 shadow-md shadow-black/20 justify-between bg-gray-100/20"
+            className="flex hover:scale-105 duration-300 rounded-lg w-full p-4 my-2 shadow-md shadow-black/20 justify-between bg-gray-100/20"
             onClick={() => {
               setOrderData(order);
               setOnView(true);
             }}
             key={order.id}
           >
-            <div className="">
-              <h2>Order ID: {order.id}</h2>
+            <div className="cursor-pointer">
+              <h2 className="hidden md:block">Order ID: {order.id}</h2>
               <p>
-                Name: <span className="font-bold">{order.name}</span>
+                <span className="font-bold">{order.name}</span>
               </p>
-              <p className="hidden md:block">
-                Timestamp:{" "}
+              <p className="">
                 <span className="font-bold">
                   {order.timestamp
                     ? new Date(order.timestamp.seconds * 1000).toLocaleString(
@@ -107,9 +106,6 @@ const OrdersView = () => {
                 />
               )}
             </div>
-            <button className="rounded-xl p-2 border-none bg-white text-black hover:bg-orange-600 hover:text-white">
-              Details
-            </button>
           </div>
         ))
       ) : (
