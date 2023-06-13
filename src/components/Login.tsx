@@ -29,8 +29,10 @@ const Login = () => {
   const signInWithGoogle = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
+      navigate("/admin");
     } catch (err) {
       console.error(err);
+      setError(true)
     }
   };
 
