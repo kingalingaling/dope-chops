@@ -54,7 +54,7 @@ const Cart = (props: any) => {
     onSubmitOrder();
     navigate("/order-completed");
     emptyCart();
-    console.log('success');
+    console.log("success");
   };
 
   const onClose = () => {
@@ -125,7 +125,7 @@ const Cart = (props: any) => {
         delivery_address: address,
         timestamp: serverTimestamp(),
         fulfilled: 0,
-        fulfilled_time: null
+        fulfilled_time: null,
       });
     } catch (err) {
       console.error(err);
@@ -141,10 +141,17 @@ const Cart = (props: any) => {
         ></div>
         <div className="p-4 max-h-[70vh] overflow-y-auto no-scrollbar rounded-xl flex flex-col z-20 fixed right-4 top-2 lg:top-4 w-[330px] md:w-[400px] lg:w-[500px] bg-white">
           {cartItems.length == 0 ? (
-            <div className="flex flex-col justify-center">
-              <h2 className="mx-auto text-3xl md:text-4xl lg:text-5xl font-black text-orange-600">
-                CART
-              </h2>
+            <div className="flex flex-col justify-between">
+              <div className="flex items-center">
+                <h2 className="mx-auto text-center mb-3 text-3xl md:text-4xl lg:text-5xl font-black text-orange-600">
+                  CART
+                </h2>
+                <AiOutlineClose
+                  size={25}
+                  className="cursor-pointer -mt-2 text-gray-700"
+                  onClick={() => handleChangeState()}
+                />
+              </div>
               <AiOutlineShoppingCart
                 size={100}
                 className="mx-auto my-20 text-orange-500/40"

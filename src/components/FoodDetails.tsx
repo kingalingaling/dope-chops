@@ -34,7 +34,7 @@ const FoodDetails = (props: any) => {
             <p>{foodItem.info}</p>
             <p>
               <span className="font-bold text-orange-600">Quantity: </span>
-              {formatCurrency(foodItem.num)}{' '} Pieces
+              {foodItem.num}{foodItem.num == 1? ' Piece/Serving' : ' Pieces/Servings'}
             </p>
             <p>
               <span className="font-bold text-orange-600">Price: </span>

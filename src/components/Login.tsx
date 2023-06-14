@@ -39,7 +39,7 @@ const Login = () => {
   return (
     <div className="h-full text-white">
       {/* Left column container with background */}
-      <div className="g-6 flex-col md:flex h-full flex-wrap items-center justify-center lg:justify-between">
+      <div className="g-6 flex flex-col lg:flex-row h-full flex-wrap items-center justify-center lg:justify-between">
         <div className="shrink-1 mb-12 grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12">
           <img
             src={signInImage}
@@ -74,7 +74,7 @@ const Login = () => {
             {/* Separator between social media sign in and email/password sign in */}
             <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
               <p className="mx-4 mb-0 text-center font-semibold dark:text-white">
-                Or
+                
               </p>
             </div>
 
