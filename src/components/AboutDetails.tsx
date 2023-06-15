@@ -52,7 +52,7 @@ const AboutDetails = () => {
                 <h3 className="py-3 lg:py-0 lg:pt-3 text-2xl text-gray-400">
                   {chefs[chef].role}
                 </h3>
-                <p className="text-5xl capitalize mb-2">{chefs[chef].name}</p>
+                <p className="text-4xl capitalize mb-2">{chefs[chef].name}</p>
               </div>
               <p className="text-lg tracking-slimmer text-justify">{chefs[chef].about}</p>
             </div>

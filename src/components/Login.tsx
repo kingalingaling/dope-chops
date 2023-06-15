@@ -1,9 +1,9 @@
-import { auth, googleProvider } from "../config/firebase";
-import { signInWithPopup } from "firebase/auth";
+// import { auth, googleProvider } from "../config/firebase";
+// import { signInWithPopup } from "firebase/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../config/authService";
-import googleLogo from "../assets/icons/google.png";
+// import googleLogo from "../assets/icons/google.png";
 import signInImage from "../assets/images/sign-in.png";
 
 const Login = () => {
@@ -26,15 +26,15 @@ const Login = () => {
   };
 
   // Sign in with Google
-  const signInWithGoogle = async () => {
-    try {
-      await signInWithPopup(auth, googleProvider);
-      navigate("/admin");
-    } catch (err) {
-      console.error(err);
-      setError(true)
-    }
-  };
+  // const signInWithGoogle = async () => {
+  //   try {
+  //     await signInWithPopup(auth, googleProvider);
+  //     navigate("/admin");
+  //   } catch (err) {
+  //     console.error(err);
+  //     setError(true)
+  //   }
+  // };
 
   return (
     <div className="h-full text-white">
@@ -52,8 +52,8 @@ const Login = () => {
         <div className="mb-12 md:mb-0 md:w-8/12 p-4 md:p-0 lg:w-5/12 lg:pr-6 xl:w-5/12">
           <form onSubmit={handleLogin}>
             {/* Sign in section */}
-            <div className="flex flex-row items-center justify-center lg:justify-start">
-              <p className="mb-0 mr-4 text-lg">Sign in with</p>
+            <div className="flex flex-row pb-4 items-center justify-center lg:justify-start">
+              <p className="mb-0 mr-4 text-lg">Sign In</p>
 
               {/*  Google  */}
               {/* <button
@@ -63,20 +63,20 @@ const Login = () => {
               >
                 <img className='w-auto h-full' src={googleLogo} alt="" />
               </button> */}
-              <div
+              {/* <div
                 className="flex justify-center items-center mx-1 h-9 w-9 rounded-full bg-white uppercase cursor-pointer leading-normal shadow-[0_4px_9px_-4px_#3b71ca]"
                 onClick={() => signInWithGoogle()}
               >
                 <img className="w-5 h-5" src={googleLogo} alt="" />
-              </div>
+              </div> */}
             </div>
 
             {/* Separator between social media sign in and email/password sign in */}
-            <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
+            {/* <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
               <p className="mx-4 mb-0 text-center font-semibold dark:text-white">
                 
               </p>
-            </div>
+            </div> */}
 
             {/* Error Field */}
             {error && (
