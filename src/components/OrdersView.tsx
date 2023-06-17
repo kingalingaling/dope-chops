@@ -70,7 +70,7 @@ const OrdersView = () => {
       {orders && orders.length ? (
         sortedOrders?.map((order) => (
           <div
-            className="flex hover:scale-105 duration-300 rounded-lg w-full p-4 my-2 shadow-md shadow-black/20 justify-between bg-gray-100/20"
+            className="flex hover:bg-gray-100/50 duration-300 rounded-lg w-full p-4 my-2 shadow-md shadow-black/20 justify-between bg-gray-100/20"
             onClick={() => {
               setOrderData(order);
               setOnView(true);
