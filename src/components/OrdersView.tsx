@@ -11,7 +11,8 @@ const OrdersView = () => {
   const [orders, setOrders] = useState<orderType[]>([]);
   const [onView, setOnView] = useState(false);
   const [orderData, setOrderData] = useState<orderType>();
-  const [sort, setSort] = useState<string>();
+  const [sort, setSort] = useState<string>("");
+  const [sortOrder, setSortOrder] = useState<string>("ascending");
 
   const onSetOnView = (newOnView: any) => {
     setOnView(newOnView);
@@ -36,16 +37,28 @@ const OrdersView = () => {
   const sortedOrders = orders?.sort((a, b) => {
     if (sort === "name") {
       if (a.name && b.name) {
-        return a.name.localeCompare(b.name);
+        if (sortOrder === "ascending") {
+          return a.name.localeCompare(b.name);
+        } else {
+          return b.name.localeCompare(a.name);
+        }
       }
     }
     if (sort === "timestamp") {
       if (a.timestamp && b.timestamp) {
-        return a.timestamp.toMillis() - b.timestamp.toMillis();
+        if (sortOrder === "ascending") {
+          return a.timestamp.toMillis() - b.timestamp.toMillis();
+        } else {
+          return b.timestamp.toMillis() - a.timestamp.toMillis();
+        }
       }
     }
     if (sort === "cost") {
-      return Number(a.cost) - Number(b.cost);
+      if (sortOrder === "ascending") {
+        return Number(a.cost) - Number(b.cost);
+      } else {
+        return Number(b.cost) - Number(a.cost);
+      }
     }
     return 0;
   });
@@ -65,12 +78,34 @@ const OrdersView = () => {
           <option value="name">Name</option>
           <option value="cost">Order Total</option>
         </select>
+
+        {sort === "" ? (
+          ""
+        ) : sort === "timestamp" ? (
+          <select
+            className="p-2 rounded-xl mt-3 w-36 bg-white text-gray-900"
+            defaultValue={""}
+            onChange={(e) => setSortOrder(e.target.value)}
+          >
+            <option value="ascending">Earliest First</option>
+            <option value="descending">Most Recent</option>
+          </select>
+        ) : (
+          <select
+            className="p-2 rounded-xl mt-3 w-36 bg-white text-gray-900"
+            defaultValue={""}
+            onChange={(e) => setSortOrder(e.target.value)}
+          >
+            <option value="ascending">Ascending</option>
+            <option value="descending">Descending</option>
+          </select>
+        )}
       </div>
       {/* Order Details */}
       {orders && orders.length ? (
         sortedOrders?.map((order) => (
           <div
-            className="flex hover:bg-gray-100/50 duration-300 rounded-lg w-full p-4 my-2 shadow-md shadow-black/20 justify-between bg-gray-100/20"
+            className="flex hover:bg-gray-100/50 cursor-pointer duration-300 rounded-lg w-full p-4 my-2 shadow-md shadow-black/20 justify-between bg-gray-100/20"
             onClick={() => {
               setOrderData(order);
               setOnView(true);
